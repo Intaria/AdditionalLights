@@ -57,9 +57,6 @@ public abstract class Wand extends ModItem {
                 
             txt_shift = Component.translatable( "additional_lights.txt.shift" );
             txt_usage = Component.translatable( "additional_lights.txt.usage" );
-            txt_rightclick = Component.translatable( "additional_lights.txt.item.soul_wand.rightclick" );
-            txt_lefthand = Component.translatable( "additional_lights.txt.item.soul_wand.lefthand" );
-            txt_piglin = Component.translatable( "additional_lights.txt.item.soul_wand.piglin" );
         }
 
         if ( Screen.hasShiftDown() )

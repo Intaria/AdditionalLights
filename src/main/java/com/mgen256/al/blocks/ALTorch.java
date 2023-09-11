@@ -29,7 +29,6 @@ import java.util.Random;
 import javax.annotation.Nullable;
 
 import com.mgen256.al.*;
-import com.mgen256.al.items.SoulWand;
 
 public class ALTorch extends TorchBlock implements IModBlock, IHasFire {
 
@@ -112,11 +111,5 @@ public class ALTorch extends TorchBlock implements IModBlock, IHasFire {
         list.add( new ItemStack( blockItem ));
 
         return list;
-    }
-
-    @Override
-    public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-        if( placer.getOffhandItem().getItem() instanceof SoulWand )
-            level.setBlockAndUpdate( pos, state.setValue( FIRE_TYPE, FireTypes.SOUL ) );
     }
 }

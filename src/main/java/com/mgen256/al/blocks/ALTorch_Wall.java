@@ -31,7 +31,6 @@ import javax.annotation.Nullable;
 
 import com.google.common.collect.Maps;
 import com.mgen256.al.*;
-import com.mgen256.al.items.SoulWand;
 
 public class ALTorch_Wall extends WallTorchBlock implements IModBlock, IHasFire {
     
@@ -127,11 +126,5 @@ public class ALTorch_Wall extends WallTorchBlock implements IModBlock, IHasFire 
         list.add( new ItemStack( AdditionalLights.getBlockItem( floorKey ) ) );
 
         return list;
-    }
-    
-    @Override
-    public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-        if( placer.getOffhandItem().getItem() instanceof SoulWand )
-            level.setBlockAndUpdate( pos, state.setValue( FIRE_TYPE, FireTypes.SOUL ) );
     }
 }

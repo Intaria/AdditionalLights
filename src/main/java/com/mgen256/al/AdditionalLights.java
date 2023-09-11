@@ -39,7 +39,7 @@ public class AdditionalLights {
 
     public static Item.Properties ItemProps; 
     public static Map<ModBlockList, IModBlock> modBlocks;
-    public static Map<ModItemList, IModItem> modItems;
+    //public static Map<ModItemList, IModItem> modItems;
     public static Map<ModSoundList, SoundEvent> modSounds;
 
     private static final Logger LOGGER = LogManager.getLogger();
@@ -62,7 +62,7 @@ public class AdditionalLights {
                 itemStacks.clear();
 
                 // items
-                modItems.forEach( (key, item) -> itemStacks.add(new ItemStack( (Item)item )) );
+                //modItems.forEach( (key, item) -> itemStacks.add(new ItemStack( (Item)item )) );
 
                 // blocks
                 modBlocks.forEach( (key, block) -> {
@@ -286,7 +286,7 @@ public class AdditionalLights {
             put(ModBlockList.FirePit_L_Pink_Wool, new FirePit_L(Blocks.PINK_WOOL));
             put(ModBlockList.FirePit_L_Magenta_Wool, new FirePit_L(Blocks.MAGENTA_WOOL));
 
-                                        
+                      
             put(ModBlockList.Fire_For_StandingTorch_S, new Fire( PedestalTypes.standing_torch_s ));
             put(ModBlockList.Fire_For_StandingTorch_L, new Fire( PedestalTypes.standing_torch_l ));
             put(ModBlockList.Fire_For_FirePit_S, new Fire( PedestalTypes.fire_pit_s ));
@@ -296,15 +296,8 @@ public class AdditionalLights {
             put(ModBlockList.SoulFire_For_StandingTorch_L, new Fire_Soul( PedestalTypes.standing_torch_l ));
             put(ModBlockList.SoulFire_For_FirePit_S, new Fire_Soul( PedestalTypes.fire_pit_s ));
             put(ModBlockList.SoulFire_For_FirePit_L, new Fire_Soul( PedestalTypes.fire_pit_l ));
-
        }
         };
-        
-        modItems = new LinkedHashMap<ModItemList, IModItem>(){ 
-            private static final long serialVersionUID = 3L;
-            {
-                put( ModItemList.SoulWand, new SoulWand() );
-            }};
 
         modBlocks.forEach( ( key, block ) -> block.init() );
     }
@@ -349,7 +342,7 @@ public class AdditionalLights {
                 event.register( Registry.ITEM_REGISTRY, (reg) -> reg.register( block.getModRegistryName(), block.getBlockItem() ) );
             } );
 
-            modItems.forEach( ( key, item ) -> event.register( Registry.ITEM_REGISTRY, (reg) -> reg.register( item.getModRegistryName(), (Item)item ) ) );
+            //modItems.forEach( ( key, item ) -> event.register( Registry.ITEM_REGISTRY, (reg) -> reg.register( item.getModRegistryName(), (Item)item ) ) );
         }
 
         @SubscribeEvent

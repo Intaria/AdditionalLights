@@ -180,9 +180,6 @@ public abstract class Pedestal extends ModBlock implements SimpleWaterloggedBloc
     
     @Override
     public void setPlacedBy(Level level, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack stack) {
-        if( placer.getOffhandItem().getItem() instanceof SoulWand )
-            state = state.setValue( FIRE_TYPE, FireTypes.SOUL );
-
         if( placer.isSuppressingSlidingDownLadder() )
             level.setBlockAndUpdate( pos, state.setValue( ACCEPT_POWER, false ) );
         else
